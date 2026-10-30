@@ -1,6 +1,6 @@
 # Rotel Lambda Forwarder
 
-An AWS Lambda function written in Rust that forwards CloudWatch and S3-stored logs to OpenTelemetry-compatible backends. This function receives requests triggered by either CloudWatch Logs subscription filters or S3 event notifications, transforms them into OpenTelemetry log format, and exports them using the [Rotel](https://github.com/streamfold/rotel) agent. This is built on the existing Rotel OpenTelemetry data plane, so logs can be exported to any [supported exporter](https://rotel.dev/docs/category/exporters). Logs can be filtered, transformed, or enriched by adding small processor functions written in Python.
+An AWS Lambda function written in Rust that forwards CloudWatch and S3-stored logs to OpenTelemetry-compatible backends. This function receives requests triggered by either CloudWatch Logs subscription filters or S3 event notifications, transforms them into OpenTelemetry log format, and exports them using the [Rotel](https://github.com/rotel-dev/rotel) agent. This is built on the existing Rotel OpenTelemetry data plane, so logs can be exported to any [supported exporter](https://rotel.dev/docs/category/exporters). Logs can be filtered, transformed, or enriched by adding small processor functions written in Python.
 
 ---
 
@@ -314,7 +314,7 @@ aws lambda update-function-code \
 
 **Note:** Python log processors are **not supported** with ZIP file deployment. Use Docker container deployment if you need Python processor support.
 
-You can download pre-built Lambda ZIP files for x86_64 and arm64 architectures from the [Releases](https://github.com/streamfold/rotel-lambda-forwarder/releases) page, or from the following links:
+You can download pre-built Lambda ZIP files for x86_64 and arm64 architectures from the [Releases](https://github.com/rotel-dev/rotel-lambda-forwarder/releases) page, or from the following links:
 
 | **Region** | **x86_64**                                                                                                                            | **arm64**                                                                                                                            |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
